@@ -49,7 +49,7 @@ class AuthenticationTest extends TestCase
         ]);
 
         $response->assertRedirect(route('two-factor.login'));
-        $response->assertSessionHas('login.id', $user->id);
+        $response->assertSessionHas('login.id', $user->uuid);
         $this->assertGuest();
     }
 
